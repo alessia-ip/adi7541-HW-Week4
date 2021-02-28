@@ -8,5 +8,6 @@ public class HexClick : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log(this.gameObject.name);
+        GameManager.CurrentlySelected = this.gameObject;
     }
 }
