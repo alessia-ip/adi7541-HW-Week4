@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/.idea.WeekFourHomework-ParsingData.iml
+/projectSettingsUpdater.xml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\Alessia\Desktop\CodeLab1_2021\adi7541-HW-Week4\WeekFourHomework-ParsingData\.idea\.idea.WeekFourHomework-ParsingData\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
