@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 148415851}
   m_Layer: 0
   m_Name: BlankHex
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 449280892}
   m_Layer: 0
   m_Name: BlankHex (2)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 530101183}
   m_Layer: 0
   m_Name: BlankHex (5)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 542936216}
   m_Layer: 0
   m_Name: BlankHex (1)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 661532722}
   m_Layer: 0
   m_Name: BlankHex (1)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 668984522}
   m_Layer: 0
   m_Name: BlankHex (3)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 1089149433}
   m_Layer: 0
   m_Name: BlankHex (4)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1207,7 +1207,7 @@ GameObject:
   - component: {fileID: 1097118458}
   m_Layer: 0
   m_Name: BlankHex (5)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1333,7 +1333,7 @@ GameObject:
   - component: {fileID: 1128820530}
   m_Layer: 0
   m_Name: BlankHex
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 1351367956}
   m_Layer: 0
   m_Name: BlankHex (3)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1585,7 +1585,7 @@ GameObject:
   - component: {fileID: 1423330365}
   m_Layer: 0
   m_Name: BlankHex (2)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1711,7 +1711,7 @@ GameObject:
   - component: {fileID: 1512493942}
   m_Layer: 0
   m_Name: BlankHex (4)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1837,7 +1837,7 @@ GameObject:
   - component: {fileID: 1555151737}
   m_Layer: 0
   m_Name: BlankHex
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1963,7 +1963,7 @@ GameObject:
   - component: {fileID: 1658980918}
   m_Layer: 0
   m_Name: BlankHex (4)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2085,6 +2085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901524729}
   - component: {fileID: 1901524728}
+  - component: {fileID: 1901524730}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2104,6 +2105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b3bd110bbacdf44a48f4ea6bc0272a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cit: {fileID: 21300000, guid: e1eec2450ad28a7438953b332dbdf242, type: 3}
+  sci: {fileID: 21300000, guid: aad92e1ae38c9b149a0a6b58e096ca86, type: 3}
+  mars: {fileID: 21300000, guid: f71adaa37be71324b9c989003a7f6bb4, type: 3}
+  blank: {fileID: 21300000, guid: 95a5235fd6fede74c9e8b315a73fff90, type: 3}
 --- !u!4 &1901524729
 Transform:
   m_ObjectHideFlags: 0
@@ -2118,6 +2123,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1901524730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901524727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5653159fd00e7244a8803b0ef1f03fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  tiles: []
+  tileType: []
 --- !u!1 &1958652152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2152,7 @@ GameObject:
   - component: {fileID: 1958652155}
   m_Layer: 0
   m_Name: BlankHex (1)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2258,7 +2278,7 @@ GameObject:
   - component: {fileID: 2052412394}
   m_Layer: 0
   m_Name: BlankHex (3)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2384,7 +2404,7 @@ GameObject:
   - component: {fileID: 2079060667}
   m_Layer: 0
   m_Name: BlankHex (2)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
