@@ -5,6 +5,7 @@ using System.Diagnostics.Contracts;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.WSA;
 using Application = UnityEngine.Application;
 
@@ -17,6 +18,10 @@ public class GameManager : MonoBehaviour
     private static bool save;
     
     public static GameObject can;
+
+    public static int gold;
+    public List<int> goldRecord;
+    public Text goldText;
     
     public static GameObject CurrentlySelected
     {
@@ -41,6 +46,8 @@ public class GameManager : MonoBehaviour
     private static string DIR = "/Logs";
     static string FILE_NAME = "/save.txt";
     private string PATH_TO_SAVE;
+    private string PATH_TO_GOLD;
+    static string FILE_GOLD = "/gold.txt";
 
     public GameObject[] tiles;
     public List<string> tileType;
@@ -48,7 +55,8 @@ public class GameManager : MonoBehaviour
     private string tilesToSave;
 
     private bool writeOver = false;
-    
+
+    public Text endText;
     
     // This is my singleton game manager
     void Awake()
@@ -69,6 +77,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        
+        //THIS IS THE MAIN TILE SAVE
         PATH_TO_SAVE = Application.dataPath + DIR + FILE_NAME;
 
         if (!File.Exists(PATH_TO_SAVE))
@@ -94,10 +104,28 @@ public class GameManager : MonoBehaviour
             saveandload();
         }
         
+        
+        //This is the gold save
+        PATH_TO_GOLD = Application.dataPath + DIR + FILE_GOLD;
+
+        if (!File.Exists(PATH_TO_GOLD))
+        {
+            File.Create(PATH_TO_GOLD).Dispose();
+        }
+        else
+        {
+            string[] goldRead = File.ReadAllText(PATH_TO_GOLD).Split(',');
+            for (int i = 0; i < goldRead.Length; i++)
+            {
+                goldRecord.Add(Int32.Parse(goldRead[i]));
+            }
+        }
+        
     }
 
     private void Update()
     {
+        //Debug.Log(gold);
         if (updateTiles == true)
         {
             updateTileSet();
@@ -108,6 +136,8 @@ public class GameManager : MonoBehaviour
             saveandload();
             save = false;
         }
+
+        goldText.text = "Your current gold is: " + gold;
     }
 
 
@@ -178,5 +208,19 @@ public class GameManager : MonoBehaviour
             File.WriteAllText(PATH_TO_SAVE, tilesToSave + "");
         }
     }
+
+    public void EndGame()
+    {
+        int prevGold = goldRecord[goldRecord.Count - 1];
+        string goldToSave = prevGold + "," + gold; //all I need to keep track of is the previous val, and the current val! We can discard the rest :) 
+        Debug.Log(goldToSave);
+        File.WriteAllText(PATH_TO_GOLD, goldToSave);
+        endText.text = "Previous Gold: " + prevGold + "\n" + "Current Gold: " + gold;
+        endText.gameObject.SetActive(true);
+        goldText.gameObject.SetActive(false);
+        SceneManager.LoadScene(1);
+
+    }
+    
 
 }
