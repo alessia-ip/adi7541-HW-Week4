@@ -21,12 +21,15 @@ public class SetTile : MonoBehaviour
     private void Update()
     {
         
+        //timer!
         timer += Time.deltaTime;
         
+        //set sprite name based on this object's sprite
         spriteName = this.gameObject.GetComponent<SpriteRenderer>().sprite.name;
 
         //Debug.Log(tick + " and the mod is " + (int)timer % 10);
         
+        //gold changes based on the tile types of each tile
         if ((int)timer % 10 == 0 && tick == false)
         {
             //Debug.Log("ADD GOLD");
@@ -52,7 +55,7 @@ public class SetTile : MonoBehaviour
 
          
         }
-
+        //keeping track of the timer tick
         if (timer % 10 != 0)
         {
             tick = false;
